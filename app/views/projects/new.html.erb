@@ -1,0 +1,17 @@
+<section class="intro">
+<div class="container-fluid form" style="margin-top:20vh; padding:0">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+		<div class="row">
+			<h3 style="color: grey; font-size: 50px">What category does your project fall into?</h3><br><br>
+			<%= simple_form_for @project, html:{multipart: true} do |f| %>
+				<%= f.input :main_category, label: false, collection: ["Film & Video", "Publishing", "Design", "Art", "Food", "Fashion", "Games", "Theater", "Music", "Crafts", "Technology", "Comics", "Photography", "Journalism"], as: :select %>
+				<br>
+				<br>
+				<%= f.button :submit %>
+			<% end %>
+		</div>
+		</div>
+	</div>
+</div>
+</section>

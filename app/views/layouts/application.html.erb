@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ey</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+
+  	<nav class="navbar navbar-transparent navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#"></a>
+		</div>
+		<ul class="nav transparent navbar-nav navbar-right">
+			<li><a href="#">Fine Tune Your Success</a></li>
+			<li><a href="#">Improve Your Campaign</a></li>
+			<li><a href="#">Know Your Competition</a></li>
+		</ul>
+	</div>
+	</nav>
+
+    <%= yield %>
+    <img src="/images/GitHub-Mark-64px.png" class="github_logo">
+  </body>
+</html>

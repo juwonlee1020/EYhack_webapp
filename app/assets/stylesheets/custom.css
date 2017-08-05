@@ -1,0 +1,68 @@
+body{
+    text-align:center;
+}
+nav{
+	position:fixed;
+	top:50px;
+}
+
+.navbar-transparent .navbar-nav >li >a:hover{
+	color: gainsboro;
+	background-color: transparent;
+}
+
+.navbar-transparent .navbar-nav >li >a {
+	color:white;
+	font-size:20px;
+}
+
+.intro {
+	background-color:#f4df42; /* yellow */
+	height:100vh;
+	margin: 0;
+	padding: 0s;
+	width: 100%;
+	position:absolute;
+}
+
+
+
+.intro > div h2 {
+    font-size: 80px;
+    color: grey;
+}
+
+.intro > div h1 {
+    font-size: 120px;
+    color: white;
+}
+
+.github_logo {
+    position: fixed;
+    left:25px;
+    top:30px;
+}
+
+.ready {
+    display:none;
+}
+
+.container {
+  width: 80%;
+  margin: 15px auto;
+}
+
+.form{
+	margin-top: 20vh;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.field{
+
+}
+
+
+.tables{
+	display:none;
+}

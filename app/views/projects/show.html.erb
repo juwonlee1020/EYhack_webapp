@@ -1,0 +1,208 @@
+
+<section class="intro" style="top:0">
+	<div class="columns_form container-fluid" style="margin-top:30vh">
+			<form class="col-sm-8 col-sm-offset-2">
+			<div class="row">
+			<div class="col-sm-6">
+			<div class="form-group">
+			<label for="category_box">Sub-category</label>
+			<input type="text" class="form-control" name="sub-category" id="category_box">
+			</div>
+			<div class="form-group">
+			<label for="duration_box">Duration</label>
+			<input type="text" class="form-control" name="duration" id="duration_box">
+			</div>
+			<div class="form-group">
+			<label for="facebook_box">Facebook Friends</label>
+			<input type="text" class="form-control" name="facebook_friends" id="facebook_box">
+			</div>
+			</div>
+			<div class="col-sm-6">
+			<div class="form-group">
+			<label for="goal_box">Goal</label>
+			<input type="text" class="form-control" name="goal" id="goal_box">
+			</div>
+			<div class="form-group">
+			<label for="ed_box">Estimated Delivery</label>
+			<input type="text" class="form-control" name="estimated_delivery" id="ed_box">
+			</div>
+			<div class="form-group">
+			<label for="ps_box">Number of Previous Successful Campaigns</label>
+			<input type="text" class="form-control" name="ps" id="ps_box">
+			</div>
+			
+			</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<button onclick = "getResults(event); scroll(event)">Predict</button>
+			</div>
+			</form>
+	</div>
+	<div class="tables container-fluid" style="margin-top:20vh">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="row">
+				
+			</div>
+			<div class="row">
+				<div class="col-sm-4" style="width: 300px; height: 500px; padding: none;">
+					<canvas id="goal_table" width="300" height="500"></canvas> 
+				</div>
+				<div class="col-sm-4" style="width: 300px; height: 500px; padding: none;">
+					<canvas id="duration_table" width="300" height="500"></canvas> 
+				</div>
+				<div class="col-sm-4" style="width: 300px; height: 500px;padding:none; margin-right:none">
+					<canvas id="delivery_table" width="300" height="500"></canvas> 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+<script>
+function scroll(e){
+	e.preventDefault();
+	/*$("body").scrollTo("#second_sec");*/
+	$(".columns_form").hide();
+}
+function getResults(e){	
+	e.preventDefault();
+	$(".tables").show();
+	var subcategory = $("#category_box").val();
+	var duration = $("#duration_box").val();
+	var facebook_friends = $("#facebook_box").val();
+	var goal = $("#goal_box").val();
+	var estimated_delivery = $("#ed_box").val();
+	var previous_success = $("#ps_box").val();
+	//From kc_film_video.ipynb
+	var goal_mean = 7477;
+	var duration_mean = 31;
+	var numPerks_mean = 9;
+	var medianPerks_mean = 74.15;
+	var estimated_delivery_mean = 104;
+	var totWordCount_mean = 813.811;
+	new Chart(document.getElementById("duration_table"), {
+	    type: 'bar',
+	    data: {
+	      labels: ["Average Success Goal","Your Goal"],
+	      datasets: [
+	        {
+	          label: "Goal",
+	          backgroundColor: ["#3e95cd", "#8e5ea2"],
+	          data: [goal_mean,goal]
+	        }
+	      ]
+	    },
+	    options: {
+	      maintainAspectRatio: true,
+	      legend: { display: false },
+	      title: {
+	        display: true,
+	        text: 'Goal'
+	      },
+	      scales:{
+	      	xAxes:[{
+	      		ticks:{
+	      			autoSkip: false
+	      		}
+	      	}],
+	      	yAxes:[{
+	      		ticks:{
+	      			beginAtZero: true
+	      		}
+	      	}]
+	      }
+	    }
+	});
+	new Chart(document.getElementById("delivery_table"), {
+	    type: 'bar',
+	    data: {
+	      labels: ["Average Success Goal","Your Goal"],
+	      datasets: [
+	        {
+	          label: "Goal",
+	          backgroundColor: ["#3e95cd", "#8e5ea2"],
+	          data: [goal_mean,goal]
+	        }
+	      ]
+	    },
+	    options: {
+	      maintainAspectRatio: true,
+	      legend: { display: false },
+	      title: {
+	        display: true,
+	        text: 'Goal'
+	      },
+	      scales:{
+	      	xAxes:[{
+	      		ticks:{
+	      			autoSkip: false
+	      		}
+	      	}],
+	      	yAxes:[{
+	      		ticks:{
+	      			beginAtZero: true
+	      		}
+	      	}]
+	      }
+	    }
+	});
+	new Chart(document.getElementById("goal_table"), {
+	    type: 'bar',
+	    data: {
+	      labels: ["Average Success Goal","Your Goal"],
+	      datasets: [
+	        {
+	          label: "Goal",
+	          backgroundColor: ["#3e95cd", "#8e5ea2"],
+	          data: [goal_mean,goal]
+	        }
+	      ]
+	    },
+	    options: {
+	      maintainAspectRatio: true,
+	      legend: { display: false },
+	      title: {
+	        display: true,
+	        text: 'Goal'
+	      },
+	      scales:{
+	      	xAxes:[{
+	      		ticks:{
+	      			autoSkip: false
+	      		}
+	      	}],
+	      	yAxes:[{
+	      		ticks:{
+	      			beginAtZero: true
+	      		}
+	      	}]
+	      }
+	    }
+	});
+}
+/*
+		function sendRequest(e){
+   		e.preventDefault();
+   		var subcategory = $("#category_box").val();
+   		var goal = $("#goal_box").val();
+   		//var third_kw = "watch";//$('#third_kw').val();		
+        $.ajax({
+				method: "GET",
+				url:'http://www.patentsview.org/api/patents/query?q={%22_and%22:[{%22_text_any%22:{%22patent_title%22:%22' + subcategory + "%22}},{%22_text_any%22:{%22patent_title%22:%22"+ goal +"%22}}]}",
+				//url:'http://www.patentsview.org/api/patents/query?q={%22_and%22:[{%22_text_any%22:{%22patent_title%22:%22' + first_kw + "%22}},{%22_text_any%22:{%22patent_title%22:%22"+second_kw+"%22}},{%22_text_any%22:{%22patent_title%22:%22"+third_kw+"%22}}]}",
+				//'http://www.patentsview.org/api/patents/query?q={%22_text_phrase%22:{%22patent_title%22:%22'+ "tennis" + '%22}}',
+		 data: {
+      		format:'json',
+  		},
+		})
+    	.done(function(data){
+    		console.log(data.patents[0].patent_title);
+    	}) 
+    }
+   */
+</script>

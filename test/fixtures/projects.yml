@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  main_category: MyString
+  category: MyString
+  goal: 
+  duration: 
+  numPerks: 
+  medianPerk: 
+  estimatedDeliver: 
+  mainVideo: 
+  numSuccessfulCampaigns: MyString
+  facebookFriends: MyString
+  numCollaborators: MyString
+  totWordCount: 
+  numImages: 
+
+two:
+  main_category: MyString
+  category: MyString
+  goal: 
+  duration: 
+  numPerks: 
+  medianPerk: 
+  estimatedDeliver: 
+  mainVideo: 
+  numSuccessfulCampaigns: MyString
+  facebookFriends: MyString
+  numCollaborators: MyString
+  totWordCount: 
+  numImages: 
